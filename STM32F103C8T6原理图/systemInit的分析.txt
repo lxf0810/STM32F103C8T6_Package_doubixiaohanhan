@@ -1,0 +1,32 @@
+时钟树：
+SYSCLK :   72M
+HCLK(AHB): 72M
+APB1:      36M
+APB2:      72M
+stm32默认时钟：内部HSI
+
+默认使用最大值：
+
+HSE=8M   PLL
+
+SYSCLK :   72M
+HCLK(AHB): 72M
+APB1:      36M
+APB2:      72M
+
+1，开启HSI=8M作为系统时钟SYSCLK
+2，开启HSE=8M
+3，等待HSE稳定
+4,配置HCLK=SYSCLK  APB1=HCLK/2 APB2=HCLK
+5，配置PLL（将HSE输入，同时进行9倍频）=8M*9=72M
+6，等待PLL稳定
+7，切换系统时钟SYSCLK=PLL、
+
+默认使用最大值：
+
+HSE=8M   PLL
+
+SYSCLK :   72M
+HCLK(AHB): 72M
+APB1:      36M
+APB2:      72M
